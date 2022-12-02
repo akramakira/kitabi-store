@@ -1,0 +1,236 @@
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin: 0 24px;
+}
+
+.book-card {
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    ". . . . . . ."
+    ". cover . desc . status ."
+    ". . . . . . ."
+    ". description description description description description ."
+    ". . . . . . ."
+    ". auth-bio auth-bio auth-bio auth-bio auth-bio ."
+    ". . . . . . .";
+  grid-template-columns: 30px 180px 30px auto 30px 250px 30px;
+  grid-template-rows: 30px 270px 30px auto 30px auto 30px;
+  margin: 0 auto;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color: var(--color4);
+  border-radius: 20px;
+}
+
+.book-card .cover {
+  height: 270px;
+  grid-area: cover;
+  display: flex;
+  align-items: center;
+}
+
+.book-card .cover img {
+  width: 180px;
+  height: 270px;
+  box-shadow: 14px 9px 20px 0px #00000087;
+}
+
+.book-card .desc {
+  height: 270px;
+  grid-area: desc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  background-color: var(--color3);
+  padding: 0 20px;
+}
+
+.book-card .desc p {
+  margin: 0;
+  padding: 0;
+}
+
+.book-card .desc p span {
+  font-weight: bold;
+}
+
+.book-card .desc .author {
+  /* margin: 0;
+  padding: 0;
+  grid-area: author; */
+}
+
+.book-card .desc .descr {
+  margin: 0;
+  padding: 0;
+  grid-area: descr;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 82.72px;
+}
+
+.book-card .desc .actions {
+  grid-area: buy;
+  width: 220px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-card .desc .actions .buy {
+  border-radius: 7px;
+  border: none;
+  padding: 15px 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: var(--orange);
+  font-size: 16px;
+  box-shadow: 1px 1px 0px #00000087;
+  cursor: pointer;
+}
+
+.book-card .desc .actions .view {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: var(--green);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 0px #00000087;
+}
+
+.book-card .desc .actions .view svg {
+  width: 30px;
+  height: 30px;
+}
+
+.book-card .status {
+  display: flex;
+  justify-content: center;
+  height: 270px;
+  grid-area: status;
+  border-radius: 20px;
+  background-color: var(--color3);
+  align-items: center;
+}
+/* 
+.book-card .status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 36px;
+  font-weight: bold;
+} */
+
+.book-card .status .status-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  width: 100%;
+}
+
+.book-card .status .status-container .book-price {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.book-card .status .status-container .book-price .price-span {
+  font-weight: bold;
+}
+
+.book-card .status .status-container .book-price .price-span-2 {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  height: 22px;
+  background-color: var(--blue);
+  border-radius: 11px;
+}
+
+.book-card .status .status-container .book-status {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.book-card .status .status-container .book-status .status-span {
+  font-weight: bold;
+}
+
+.book-card .status .status-container .book-status .status-span-2 {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  width: 70px;
+  height: 22px;
+  background-color: var(--green);
+  border-radius: 11px;
+}
+
+.book-card .status .status-container .book-buy {
+  border-radius: 7px;
+  border: none;
+  width: 50%;
+  height: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: var(--orange);
+  font-size: 16px;
+  box-shadow: 1px 1px 0px #00000087;
+  cursor: pointer;
+}
+
+.book-card .description {
+  grid-area: description;
+  width: 100%;
+  height: 100%;
+}
+
+.book-card .description h1.desc-title {
+  margin-top: 0;
+}
+
+.book-card .description p.desc-p {
+  margin: 0;
+}
+
+.book-card .auth-bio {
+  grid-area: auth-bio;
+  width: 100%;
+  height: 100%;
+}
+
+.book-card .auth-bio h1.auth-bio-title {
+  margin-top: 0;
+}
+
+.book-card .auth-bio p.auth-bio-p {
+  margin: 0;
+}
+
+.container-svg.svg-footer {
+  background-image: linear-gradient(
+    to top,
+    var(--color2) 10%,
+    var(--color1) 10%
+  );
+}
+
+.container-svg.svg-footer path {
+  fill: var(--color2);
+}

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block otherCss %}
+<link rel="stylesheet" href="{% static 'css/categorie.css' %}" />
+{% endblock %}
+
+{% block header %} 
+{% include 'parts/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+ <div class="body-container">
+  <div class="body-header">
+    {% include 'parts/_messages.html' %}
+  </div>
+    <div class="title">
+      <h1 id="categorie-name">
+        {% if cat_id %}
+          {{cat_id.name}} books
+        {% elif cate_name %}
+          {{cate_name}} 
+        {% else %}
+        {% trans "nothing" %}
+        {% endif %}
+      </h1>
+    </div>
+
+    {% if cate_name == 'authors' %}
+      {% for author in authors|slice:':20' %}
+      <div class="categorie-card" data-iscategories="false">
+        <div class="index">{{forloop.counter}}-</div>
+        <div class="cover">
+          <img src="{{ author.photo.url }}" alt="{{author.name}}" />
+        </div>
+        <div class="description">
+          <h1>{{ author.name }}</h1>
+          <p>
+            {% if author.bio %}
+            {{ author.bio }}
+            {% else %}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex eligendi 
+              modi porro facilis velit in dolorem adipisci sunt error? Quo maxime 
+              ex magni. Aut numquam molestias autem temporibus cumque minima.
+            {% endif %}
+          </p>
+          <div class="actions">
+            <a class="buy" href="{% url 'author' author.id %}">{% trans "View Books" %}</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else  %}
+      {% for book in books|slice:':20' %}
+      <form action="{% url 'add_to_cart' book.id %}" method="post">
+        {% csrf_token %}
+      <div class="categorie-card" data-iscategories="false">
+        <div class="index">{{forloop.counter}}-</div>
+        <div class="cover">
+          <img src="{{ book.cover.url }}" alt="{{book.title}}" />
+        </div>
+        <div class="description">
+          <h1>{{ book.title }}</h1>
+          <p>
+          {{ book.description }}
+          </p>
+          <div class="actions">
+            <button type="submit" class="buy" name="buybtn">{% trans "Buy Now" %}</button>
+            <a class="view" href="{% url 'book' book.id %}">
+              {% if lang == "ar" %}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                fill="currentColor" 
+                class="bi bi-arrow-up-left" 
+                viewBox="0 0 16 16"
+              >
+                <path 
+                  fill-rule="evenodd" 
+                  d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0v-6z"
+                />
+              </svg>
+              {% else %}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                fill="currentColor" 
+                class="bi bi-arrow-up-right" 
+                viewBox="0 0 16 16"
+              >
+                <path 
+                  fill-rule="evenodd" 
+                  d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"
+                />
+              </svg>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+      </form>
+      {% endfor %}
+    {% endif %}
+
+    <svg
+      class="container-svg svg-footer"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 1440 126"
+      xml:space="preserve"
+    >
+      <path
+        class="main-path"
+        d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z"
+      ></path>
+    </svg>
+    {% include 'parts/_footer.html' %}
+  </div>
+{% endblock %}

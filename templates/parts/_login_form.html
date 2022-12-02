@@ -1,0 +1,60 @@
+{% load static %}
+{% load i18n %}
+<form action="{% url 'login' %}" method="post">
+  {% csrf_token %}
+  <div class="login-page-container disabled">
+    <div class="login-page">
+      <h1 class="login-title">{% trans "log in" %}</h1>
+      <div class="login-email">
+        <input
+          type="text"
+          id="login-email-input"
+          name="login-email"
+          class="login-email-input"
+          minlength="8"
+          maxlength="26"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div class="login-password">
+        <input
+          type="password"
+          id="login-password-input"
+          name="login-password"
+          class="login-password-input"
+          minlength="8"
+          maxlength="26"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <input type="submit" value="{% trans "log in" %}" name="btnlogin" class="login-btn" id="loginBtn" />
+      <a href="{% url 'iforget' %}" class="forget">{% trans "forget password ?" %}</a>
+      <div class="ou">
+        <hr />
+      </div>
+      <button class="ou-sign-in" type="button">{% trans "sign in" %}</button>
+    </div>
+  </div>
+</form>

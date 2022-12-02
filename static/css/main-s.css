@@ -1,0 +1,286 @@
+.best-sellers-container .best-sellers, .new-books-container .new-books, .categories-container .categories {
+    grid-template-columns: 1fr 1fr;
+    gap: 85px;
+}
+
+.best-sellers-container .best-sellers .best-seller:nth-child(5),
+.new-books-container .new-books .new-book:nth-child(5),
+.categories-container .categories .categorie:nth-child(5) {
+    display: none;
+}
+
+.best-sellers-container .best-sellers .best-seller:nth-child(4),
+.new-books-container .new-books .new-book:nth-child(4),
+.categories-container .categories .categorie:nth-child(4) {
+    display: flex;
+}
+
+.best-sellers-container .best-sellers img,
+.new-books-container .new-books img,
+.categories-container .categories img {
+    width: 180px;
+    height: 230px;
+}
+
+.nav-list svg {
+    width: 38px;
+    height: 38px;
+    align-self: center;
+}
+
+/* daily offer card */
+.daily-offer-card {
+    grid-template-columns: auto 120px auto 45vw auto;
+    height: 180px;
+}
+
+.daily-offer-card .cover {
+    height: 180px;
+}
+
+.daily-offer-card .cover img {
+    width: 120px;
+    height: 180px;
+}
+
+.daily-offer-card .description {
+    height: 180px;
+    grid-area: desc;
+    display: grid;
+    grid-template-areas:
+        "."
+        "title"
+        "."
+        "descr"
+        ".";
+}
+
+.daily-offer-card .description .actions {
+    display: none;
+}
+
+/* header */
+
+.carousel {
+    height: 220px;
+}
+
+.login-nav {
+    height: 80px;
+}
+
+.login-nav .actions-nav {
+    height: 80px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.login-nav .actions-nav .language {
+    position: unset;
+    margin: 0 0 1px 0 !important;
+}
+
+.login-nav .actions-nav form {
+    position: absolute;
+    top: 2px;
+    z-index: 299;
+}
+
+.login-nav .actions-nav .log-sign {
+    position: absolute;
+    top: 43px;
+}
+
+.daily-offer-card .cover img {
+    box-shadow: 1px 2px 14px 0px #00000087;
+}
+
+.navbar .nav-logo {
+    width: 31vw;
+}
+
+.navbar .nav-items {
+    width: 47vw;
+}
+
+/*  */
+.categorie-card[data-iscategories="false"],
+.book-card[data-booksearch="true"],
+.author-card,
+.bestseller-card,
+.new-books-card {
+    grid-template-columns: auto 10px 100px 25px auto;
+    height: 240px;
+}
+
+.categorie-card[data-iscategories="false"] .index,
+.categorie-card[data-iscategories="false"] .cover,
+.categorie-card[data-iscategories="false"] .description,
+.book-card[data-booksearch="true"] .index,
+.book-card[data-booksearch="true"] .cover,
+.book-card[data-booksearch="true"] .description,
+.bestseller-card .index,
+.bestseller-card .cover,
+.bestseller-card .description,
+.new-books-card .index,
+.new-books-card .cover,
+.new-books-card .description {
+    height: 180px;
+}
+
+.categorie-card[data-iscategories="false"] .cover img,
+.book-card[data-booksearch="true"] .cover img,
+.bestseller-card .cover img,
+.new-books-card .cover img {
+    width: 100px;
+    height: 140px;
+}
+
+.categorie-card[data-iscategories="false"] .description p,
+.book-card[data-booksearch="true"] .description p,
+.bestseller-card .description p,
+.new-books-card .description p {
+    height: 62.72px;
+}
+
+.categorie-card[data-iscategories="false"] .description .actions,
+.book-card[data-booksearch="true"] .description .actions,
+.bestseller-card .description .actions,
+.new-books-card .description .actions {
+    width: 150px;
+    height: 33px;
+}
+
+.categorie-card[data-iscategories="false"] .description .actions .buy,
+.book-card[data-booksearch="true"] .description .actions .buy,
+.bestseller-card .description .actions .buy,
+.new-books-card .description .actions .buy {
+    padding: 9px 17px;
+}
+
+.categorie-card[data-iscategories="false"] .description .actions .view,
+.book-card[data-booksearch="true"] .description .actions .view,
+.bestseller-card .description .actions .view,
+.new-books-card .description .actions .view {
+    width: 33px;
+    height: 33px;
+}
+
+.categorie-card[data-iscategories="false"] .description .actions .view svg,
+.book-card[data-booksearch="true"] .description .actions .view svg,
+.bestseller-card .description .actions .view svg,
+.new-books-card .description .actions .view svg {
+    width: 25px;
+    height: 25px;
+}
+
+.result {
+    width: 100%;
+}
+
+.no-result {
+    min-height: calc(100vh - 470px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no-result span {
+    font-size: 30px;
+}
+
+.search {
+    margin: 0 auto;
+}
+
+.book-card:not([data-booksearch="true"]) {
+    grid-template-areas:
+        '. . . . . .'
+        '. cover . desc desc .'
+        '. . . . . .'
+        '. description description description status .'
+        '. . . . . .'
+        '. auth-bio auth-bio auth-bio auth-bio .';
+    grid-template-columns: 30px 170px 30px auto 150px 30px;
+}
+
+.book-card:not([data-booksearch="true"]) .cover img {
+    width: 170px;
+    height: 240px;
+}
+
+.book-card .status {
+    height: unset;
+    min-height: 200px;
+    align-items: center;
+}
+
+.book-card .status .status-container {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.book-card .status .status-container .book-price .price-span-2,
+.book-card .status .status-container .book-status .status-span-2 {
+    align-items: center;
+}
+
+.book-card:not([data-booksearch="true"]) .status .status-container .book-price,
+.book-card:not([data-booksearch="true"]) .status .status-container .book-status,
+.book-card:not([data-booksearch="true"]) .status .status-container .book-buy {
+    width: 85%;
+}
+
+.profile {
+    width: 80%;
+}
+
+.set-new-password {
+    width: 80%;
+    grid-template-rows: auto 40px auto 210px auto 60px auto 60px auto 60px auto 40px auto;
+}
+
+.set-new-password .set-new-password-image img {
+    height: 210px;
+}
+
+.select-account,
+.confirm-owner,
+.confirm-email {
+    width: 100%;
+    height: 600px;
+    grid-template-rows: auto 40px auto 250px auto 60px auto 40px auto;
+}
+
+.select-account .select-account-code,
+.confirm-owner .email-code,
+.confirm-email .email-code {
+    width: 80%;
+}
+
+.select-account .select-account-image img,
+.confirm-owner .email-image img,
+.confirm-email .email-image img {
+    height: 250px;
+}
+
+.set-new-password[data-from-forget="true"] {
+    grid-template-rows: auto 40px auto 210px auto 60px auto 60px auto 40px auto;
+}
+
+ul.show-user {
+    position: absolute;
+    top: 43px;
+}
+
+.basket-container {
+    width: 100%;
+}
+
+.basket-header {
+    column-gap: 10% !important;
+    word-break: break-word;
+    overflow: scroll;
+}

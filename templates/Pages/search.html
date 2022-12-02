@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block otherCss %} 
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+
+{% block header %} 
+{% include 'parts/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="body-container">
+  <div class="body-header">
+    {% include 'parts/_messages.html' %}
+  </div>
+    <div class="title">
+      <h1 id="search">{% trans "Search" %}</h1>
+    </div>
+    <form action="{% url 'search' %}" method="GET">
+      <div class="search">
+        <div class="search-input-container">
+          <input
+            type="text"
+            placeholder="book title, author, categorie"
+            class="search-input"
+            name="searchinput"
+          />
+          <button type="submit" class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="search-radio-container">
+          <div class="search-radio" id="titleCon">
+            <label for="titleRad" id="titleLab" onclick="selectType('title')" class="search-label" data-ischecked="true">{% trans "title" %}</label>
+            <input type="radio" name="search" value="title" id="titleRad" checked />
+          </div>
+          <div class="search-radio" id="authorCon">
+            <label for="authorRad" id="authorLab" onclick="selectType('author')" class="search-label" data-ischecked="false">{% trans "author" %}</label>
+            <input type="radio" name="search" value="author" id="authorRad" />
+          </div>
+          <div class="search-radio" id="categorieCon">
+            <label for="categorieRad" id="categorieLab" onclick="selectType('categorie')" class="search-label" data-ischecked="false">{% trans "categorie" %}</label>
+            <input type="radio" name="search" value="categorie" id="categorieRad" />
+          </div>
+        </div>
+      </div>
+    </form>
+    
+    
+        {% if books %}
+          <div class="result">
+          <span id="search-result">
+          {% for book in books %}
+          <form action="{% url 'add_to_cart' book.id %}" method="post">
+            {% csrf_token %}
+          {% if book.status == 'used' %}
+          <div class="book-card status-used" data-booksearch="true">
+          {% elif book.status == 'new' %}
+          <div class="book-card status-new" data-booksearch="true">
+          {% else %}
+          <div class="book-card" data-booksearch="true">
+          {% endif %}
+            <div class="index">{{forloop.counter}}-</div>
+            <div class="cover">
+              <img src="{{ book.cover.url }}" alt="{{book.title}}" />
+            </div>
+            <div class="description">
+              <h1>{{book.title}}</h1>
+              <p>
+                {{book.description}}
+              </p>
+              <div class="actions">
+                <button type="submit" name="buybtn" class="buy">{% trans "Buy Now" %}</button>
+                <a class="view" href="{% url 'book' book.id %}">
+                  {% if lang == "ar" %}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                fill="currentColor" 
+                class="bi bi-arrow-up-left" 
+                viewBox="0 0 16 16"
+              >
+                <path 
+                  fill-rule="evenodd" 
+                  d="M2 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1H3.707l10.147 10.146a.5.5 0 0 1-.708.708L3 3.707V8.5a.5.5 0 0 1-1 0v-6z"
+                />
+              </svg>
+              {% else %}
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                fill="currentColor" 
+                class="bi bi-arrow-up-right" 
+                viewBox="0 0 16 16"
+              >
+                <path 
+                  fill-rule="evenodd" 
+                  d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"
+                />
+              </svg>
+              {% endif %}
+                </a>
+              </div>
+            </div>
+          </div>
+        </form>
+          {% endfor %}
+        {% elif authors %}
+        <div class="result">
+        <span id="search-result">
+          {% for author in authors %}
+          <div class="author-card">
+            <div class="index">{{forloop.counter}}-</div>
+            <div class="cover">
+              <img src="{{ author.photo.url }}" alt="{{author.name}}" />
+            </div>
+            <div class="description">
+              <h1>{{ author.name }}</h1>
+              <p>
+                {% if author.bio %}
+                {{ author.bio }}
+                {% else %}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex eligendi 
+                  modi porro facilis velit in dolorem adipisci sunt error? Quo maxime 
+                  ex magni. Aut numquam molestias autem temporibus cumque minima.
+                {% endif %}
+              </p>
+              <div class="actions">
+                <a class="buy" href="{% url 'author' author.id %}">{% trans "View Books" %}</a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        {% elif categories %}
+        <div class="result">
+        <span id="search-result">
+          <div class="categories-container">
+            <div class="categories">
+              {% for categ in categories %}
+              <a class="categorie" href="{% url 'categorie' categ.categ.id %}">
+                <div>
+                  <img src="{{ categ.book.cover.url }}" alt="{{ categ.categ }}" />
+                </div>
+                <div><h3>{{ categ.categ }}</h3></div>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+        <div class="no-result">
+          <img
+            src="{% static 'images/empty_box.png' %}"
+            alt="no data found"
+          />
+          <span id="search-result">
+            {% trans "Sorry, we can't found any book with this search" %}
+          </span>
+        {% endif %}
+      
+    </div>
+    <svg
+      class="container-svg svg-footer"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 1440 126"
+      xml:space="preserve"
+    >
+      <path
+        class="main-path"
+        d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z"
+      ></path>
+    </svg>
+    {% include 'parts/_footer.html' %}
+</div>
+{% endblock %}
+

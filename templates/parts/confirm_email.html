@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block otherCss %} 
+<link rel="stylesheet" href="{% static 'css/confirm_email.css' %}">
+{% endblock %}
+
+{% block header %} 
+{% include 'parts/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="body-container">
+  <div class="body-header">
+    {% include 'parts/_messages.html' %}
+  </div>
+  {% get_current_language as lang %}
+  <form action="{% url 'confirmemail' %}" method="post">
+    {% csrf_token %}
+    <div class="confirm-email">
+      <h1 class="confirm-email-title">{% trans "confirm email" %}</h1>
+      <div class="email-image">
+        <img src="{% static 'images/mail.png' %}" alt="confirm email">
+      </div>
+      <div class="email-code">
+        <input
+          type="text"
+          maxlength="4"
+          name="emailcode"
+          placeholder="0000"
+          class="email-code-input"
+        />
+      </div>
+      <div class="actions">
+        <input type="submit" value="{% trans "confirm" %}" name="confirmemailcode" class="confirm-email-btn"/>
+      </div>
+    </div>
+  </form>
+    <svg
+        class="container-svg svg-footer"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 1440 126"
+        xml:space="preserve"
+    >
+        <path
+        class="main-path"
+        d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z"
+        ></path>
+    </svg>
+{% include 'parts/_footer.html' %}
+</div>
+{% endblock %}
+

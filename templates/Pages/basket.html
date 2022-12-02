@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block otherCss %} 
+<link rel="stylesheet" href="{% static 'css/basket.css' %}">
+{% endblock %}
+
+{% block header %} 
+{% include 'parts/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="body-container">
+  <div class="body-header">
+    {% include 'parts/_messages.html' %}
+  </div>
+  {% if order %}
+  {% get_current_language as lang %}
+  <form action="{% url 'confirm_buying' order.id %}" method="post">
+    {% csrf_token %}
+    <div class="basket-container">
+      <div class="basket-header">
+         <h1 class="basket-title">{% trans "Basket" %}</h1>
+         <p class="basket-id">{{ order.order_date|date:"Ymd" }}{{order.id|stringformat:"03d"}}</p>
+         <p class="basket-phone"><span class="basket-label">{% trans "phone:" %}</span><span>0{{user_profile.phone_nbr}}</span></p>
+         <p class="basket-date">{{order.order_date|date:"l, d / M / Y"}}</p>
+         <p class="basket-user"><span class="basket-label">{% trans "user:" %}</span><span>{{user.first_name}} {{user.last_name}}</span></p>
+      </div>
+
+
+      <h2 class="sub-title">{% trans "Books" %}</h2>
+      <div class="basket-books">
+         <table>
+            <tr class="basket-table-header">
+               <th>#</th>
+               <th>{% trans "book" %}</th>
+               <th>{% trans "author" %}</th>
+               <th>{% trans "price" %}</th>
+            </tr>
+            {% for order in order_details %}
+            <tr>
+               <td>{{forloop.counter}}</td>
+               <td>{{order.book.title}}</td>
+               <td>{{order.book.author}}</td>
+               <td>{{order.price}} {% if lang == "ar" %}دج{% else %}DA{% endif %}</td>
+            </tr>
+            {% endfor %}
+         </table>
+      </div>
+      <div class="basket-total">
+         <span>{% trans "total:" %} </span><span>{{price}} {% if lang == "ar" %}دج{% else %}DA{% endif %}</span>
+      </div>
+      <div class="delivery">
+         <div class="delivery-to">
+            <span>{% trans "Delivery to:" %} </span><span>{{user_profile.address}}</span>
+         </div>
+         <div class="delivery-price">
+            <span>{% trans "Delivery price:" %} </span><span>500 {% if lang == "ar" %}دج{% else %}DA{% endif %}</span>
+         </div>
+      </div>     
+      <div class="total-amount">
+         <span>{% trans "total amount:" %} </span><span>{{price|add:500}} {% if lang == "ar" %}دج{% else %}DA{% endif %}</span>
+      </div>
+      <input type="submit" value={% trans "confirm" %} name="btnconfirm" class="confirm-btn" id="confirmBtn" />
+    </div>
+  </form>
+  {% else %}
+  <div class="no-result">
+    <img src="{% static 'images/empty_box.png' %}" alt="empty">
+    <span>{% trans "You don't have any order yet!!" %}</span>
+  </div>
+  {% endif %}
+    <svg
+      class="container-svg svg-footer"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 1440 126"
+      xml:space="preserve"
+    >
+      <path
+        class="main-path"
+        d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z"
+      ></path>
+    </svg>
+    {% include 'parts/_footer.html' %}
+  </div>
+{% endblock %}
+

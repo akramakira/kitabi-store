@@ -1,0 +1,134 @@
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin: 0 24px;
+}
+
+.new-books-card {
+  display: grid;
+  align-items: center;
+  grid-template-areas: "index . cover . desc";
+  grid-template-columns: auto 50px 180px 50px auto;
+  margin: 0 auto;
+  height: 350px;
+  width: 80vw;
+  margin: 24px auto 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  background-color: var(--warningcolor);
+  border-radius: 20px;
+}
+
+.status-used {
+  background-color: var(--color5);
+}
+
+.status-new {
+  background-color: var(--color4);
+}
+
+.new-books-card .index {
+  height: 270px;
+  width: 50px;
+  grid-area: index;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.new-books-card .cover {
+  height: 270px;
+  grid-area: cover;
+  display: flex;
+  align-items: center;
+}
+
+.new-books-card .cover img {
+  width: 180px;
+  height: 270px;
+  box-shadow: 14px 9px 20px 0px #00000087;
+}
+
+.new-books-card .description {
+  height: 270px;
+  grid-area: desc;
+  display: grid;
+  grid-template-areas:
+    "."
+    "title"
+    "."
+    "descr"
+    "."
+    "buy"
+    ".";
+  justify-items: start;
+
+  text-justify: inter-word;
+  text-align: justify;
+}
+
+.new-books-card .description h1 {
+  margin: 0;
+  padding: 0;
+  grid-area: title;
+}
+
+.new-books-card .description p {
+  margin: 0;
+  padding: 0;
+  grid-area: descr;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 82.72px;
+}
+
+.new-books-card .description .actions {
+  grid-area: buy;
+  width: 220px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-books-card .description .actions .buy {
+  border-radius: 7px;
+  border: none;
+  padding: 15px 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: var(--orange);
+  font-size: 16px;
+  box-shadow: 1px 1px 0px #00000087;
+  cursor: pointer;
+}
+
+.new-books-card .description .actions .view {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: var(--green);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 0px #00000087;
+}
+
+.new-books-card .description .actions .view svg {
+  width: 30px;
+  height: 30px;
+}
+
+.container-svg.svg-footer {
+  background-image: linear-gradient(
+    to top,
+    var(--color2) 10%,
+    var(--color1) 10%
+  );
+}
+
+.container-svg.svg-footer path {
+  fill: var(--color2);
+}

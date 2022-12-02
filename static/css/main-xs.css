@@ -1,0 +1,217 @@
+.best-sellers-container .best-sellers,
+.new-books-container .new-books,
+.categories-container .categories {
+    grid-template-columns: 280px;
+    justify-content: center;
+}
+
+.best-sellers-container .best-sellers img,
+.new-books-container .new-books img,
+.categories-container .categories img {
+    width: 190px;
+    height: 230px;
+}
+
+.indicator {
+    padding-right: 30px;
+}
+
+.container-svg, .best-sellers-container-full,
+.body-header, .new-books-container-full,
+.categories-container-full,
+.footer-container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container-svg,
+.best-sellers-container-full,
+.body-header,
+.new-books-container-full,
+.categories-container-full,
+.footer-container {
+    width: 100%;
+}
+
+.navbar .nav-logo {
+    width: 45vw;
+}
+
+.navbar .nav-list {
+    display: block;
+}
+
+.navbar .nav-items {
+    display: none;
+}
+
+@keyframes opensidenavtoheader {
+    from {height: 62px;} 
+    to {height: 0;}
+}
+
+@keyframes closesidenavtoheader {
+    from {height: 0;} 
+    to {height: 62px;}
+}
+
+@keyframes opensidenavtoside {
+    from {width: 0; padding: 0;} 
+    to {width: 50%; padding: 30px;}
+}
+
+@keyframes closesidenavtoside {
+    from {width: 50%; padding: 30px;} 
+    to {width: 0; padding: 0;}
+}
+
+.categorie-card[data-iscategories="false"] .cover img,
+.book-card[data-booksearch="true"] .cover img,
+.bestseller-card .cover img,
+.new-books-card .cover img {
+    width: 80px;
+    height: 130px;
+}
+
+.categorie-card[data-iscategories="false"],
+.book-card[data-booksearch="true"],
+.author-card,
+.bestseller-card,
+.new-books-card {
+    grid-template-columns: auto 0px 80px 25px auto;
+    height: 220px;
+    padding-right: 10px;
+    width: 80%;
+}
+
+.categorie-card[data-iscategories="false"] .description h1,
+.book-card[data-booksearch="true"] .description h1,
+.bestseller-card .description h1,
+.new-books-card .description h1 {
+    height: 42px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.categorie-card .categorie-head {
+    font-size: 16px;
+}
+
+.categorie-body {
+    grid-template-columns: repeat(5, 150px);
+}
+
+.categorie-body .book {
+    height: 200px;
+}
+
+.categorie-body .book img {
+    width: 115px;
+    height: 145px;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.search {
+    grid-template-areas:
+        'search search search'
+        '. radio .';
+    grid-template-columns: auto;
+    grid-template-rows: 50px 40px;
+    row-gap: 10px;
+    font-size: 14px;
+    height: unset;
+}
+
+.search .search-radio-container {
+    height: 40px;
+}
+
+.search .search-radio-container label {
+    height: 40px;
+    padding: 0 5px;
+}
+
+.book-card:not([data-booksearch="true"]) {
+    grid-template-areas:
+        '. . . . . . .'
+        '. cover . desc desc desc .'
+        '. . . . . . .'
+        '. description description description . status .'
+        '. . . . . . .'
+        '. auth-bio auth-bio auth-bio auth-bio auth-bio .';
+    grid-template-columns: 15px 130px 15px auto 15px 130px 15px;
+    grid-template-rows: 15px 230px 15px auto 15px auto 15px;
+}
+
+.book-card:not([data-booksearch="true"]) .cover,
+.book-card:not([data-booksearch="true"]) .desc {
+    height: 230px;
+}
+
+.book-card:not([data-booksearch="true"]) .cover img {
+    width: 130px;
+    height: 190px;
+}
+
+.login-page,
+.signin-page {
+    width: 400px;
+}
+
+.login-page .login-email,
+.login-page .login-password,
+.signin-page .signin-username,
+.signin-page .signin-email,
+.signin-page .signin-password,
+.signin-page .signin-repassword {
+    position: relative;
+}
+
+.profile,
+.set-new-password,
+.create-profile {
+    height: 600px;
+}
+
+.profile .profile-username,
+.profile .profile-email,
+.profile .profile-fname,
+.profile .profile-lname,
+.profile .profile-address,
+.profile .profile-phone,
+.create-profile .profile-fname,
+.create-profile .profile-lname,
+.create-profile .profile-address,
+.create-profile .profile-phone,
+.set-new-password .old-password,
+.set-new-password .new-password,
+.set-new-password .new-repassword,
+.profile .actions {
+    width: 80%;
+}
+
+.select-account,
+.confirm-owner,
+.confirm-email {
+    width: 80%;
+    height: 550px;
+    grid-template-rows: auto 40px auto 220px auto 60px auto 40px auto;
+}
+
+.select-account .select-account-image img,
+.confirm-owner .email-image img,
+.confirm-email .email-image img {
+    height: 220px;
+}
+
+.basket-container {
+    width: 80%;
+}
+
+.no-result {
+    min-height: calc(100vh - 300px);
+}

@@ -1,0 +1,77 @@
+.best-sellers-container .best-sellers,
+.new-books-container .new-books,
+.categories-container .categories {
+    grid-template-columns: repeat(3, 200px);
+    gap: calc((80vw - (3 * 200px)) / 2 );
+}
+
+.best-sellers-container .best-sellers .best-seller:nth-child(5),
+.new-books-container .new-books .new-book:nth-child(5),
+.categories-container .categories .categorie:nth-child(5) {
+    display: none;
+}
+
+.best-sellers-container .best-sellers img,
+.new-books-container .new-books img,
+.categories-container .categories img {
+    width: 180px;
+    height: 230px;
+}
+
+.login-nav .actions-nav .language {
+    --positionlanguage: 55vw;
+}
+
+/* best seller */
+.categorie-card[data-iscategories="false"],
+.book-card[data-booksearch="true"],
+.author-card,
+.bestseller-card,
+.new-books-card {
+    grid-template-columns: auto 20px 160px 35px auto;
+}
+
+.categorie-card[data-iscategories="false"] .cover img,
+.book-card[data-booksearch="true"] .cover img,
+.bestseller-card .cover img,
+.new-books-card .cover img {
+    width: 160px;
+    height: 220px;
+}
+
+.search {
+    grid-template-columns: 50% auto 40%;
+    font-size: 14px;
+}
+
+.no-result img {
+    width: 75%;
+    margin-bottom: 20px;
+}
+
+.book-card:not([data-booksearch="true"]) {
+    grid-template-columns: 30px 150px 30px auto 30px 200px 30px;
+}
+
+.book-card:not([data-booksearch="true"]) .cover img {
+    width: 150px;
+    height: 220px;
+    border-radius: 7px;
+}
+
+.book-card:not([data-booksearch="true"]) .status .status-container .book-price,
+.book-card:not([data-booksearch="true"]) .status .status-container .book-status,
+.book-card:not([data-booksearch="true"]) .status .status-container .book-buy {
+    display: flex;
+    width: 65%;
+}
+
+.book-card:not([data-booksearch="true"]) .status .status-container .book-price,
+.book-card:not([data-booksearch="true"]) .status .status-container .book-status {
+    justify-content: space-between;
+}
+
+.book-card .status .status-container .book-buy {
+    justify-content: center;
+    align-items: center;
+}

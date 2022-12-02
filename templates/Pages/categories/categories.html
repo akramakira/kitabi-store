@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block otherCss %}
+<link rel="stylesheet" href="{% static 'css/categories.css' %}" />
+{% endblock %}
+
+{% block header %} 
+{% include 'parts/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="body-container">
+  <div class="body-header">
+    {% include 'parts/_messages.html' %}
+  </div>
+    <div class="title">
+      <h1 id="categ">{% trans "Categories" %}</h1>
+    </div>
+
+    {% for b in books %}
+    
+    <div class="categorie-card">
+      <a class="categorie-head"
+      {% if b.categ.id %}
+      href="{% url 'categorie' b.categ.id %}">
+      {% else %}
+      href="{% url 'categorie' b.categ %}">
+      {% endif %}
+        <h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-caret-right-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"
+            /></svg
+          ><span> {{b.categ}} </span>
+        </h2>
+      </a>
+      <div class="categorie-body">
+        {% if b.categ == 'authors' %}
+          {% for author in b.authors|slice:':5' %}
+          <a class="book" href="{% url 'author' author.id %}">
+            <div>
+              <img src="{{ author.photo.url }}" alt="{{author.name}}" />
+            </div>
+            <div><h3>{{author.name}}</h3></div>
+          </a>
+          {% endfor %}
+        {% else %}
+          {% for book in b.books|slice:':5' %}
+          <a class="book" href="{% url 'book' book.id %}">
+            <div>
+              <img src="{{ book.cover.url }}" alt="{{book.title}}" />
+            </div>
+            <div><h3>{{book.title}}</h3></div>
+          </a>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    
+    {% endfor %}
+    
+    <svg
+      class="container-svg svg-footer"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 1440 126"
+      xml:space="preserve"
+    >
+      <path
+        class="main-path"
+        d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z"
+      ></path>
+    </svg>
+    {% include 'parts/_footer.html' %}
+  </div>
+
+{% endblock %}

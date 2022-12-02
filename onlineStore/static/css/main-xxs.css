@@ -1,0 +1,386 @@
+.header-container {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.login-nav {
+    margin: 0;
+    height: 70px;
+    width: 100%;
+    flex-direction: column;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.login-nav .contact-us {
+    width: 100%;
+}
+
+.login-nav .actions-nav .log-sign {
+    position: absolute;
+    top: 0;
+}
+
+.login-nav .actions-nav {
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.navbar .nav-logo {
+    width: 80%;
+}
+
+.login-nav .actions-nav .language {
+    width: 100px;
+}
+
+@keyframes opensidenavtoside {
+    from {width: 0; padding: 0;} 
+    to {width: 80%; padding: 30px;}
+}
+
+@keyframes closesidenavtoside {
+    from {width: 80%; padding: 30px;} 
+    to {width: 0; padding: 0;}
+}
+
+.side-navbar[data-leftnav="open"] {
+    width: 80%;
+}
+
+.body-container {
+    width: 100%;
+    margin: 0;
+    font-size: 10px;
+}
+
+.carousel {
+    height: 170px;
+}
+
+.daily-offer-card {
+    grid-template-columns: auto 70px auto 45vw auto;
+    height: 150px;
+}
+
+.daily-offer-card .description,
+.daily-offer-card .cover {
+    height: 150px;
+}
+
+.daily-offer-card .cover img {
+    width: 70px;
+    height: 100px;
+}
+
+.daily-offer-card .description h1 {
+    font-size: 20px;
+}
+
+.daily-offer-card .description p {
+    font-size: 12px;
+}
+
+.container-svg, .best-sellers-container-full, .body-header, .new-books-container-full, .categories-container-full, .footer-container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.body-container form {
+    padding: 0 20px;
+}
+
+.categorie-card[data-iscategories="false"],
+.book-card[data-booksearch="true"],
+.author-card,
+.bestseller-card,
+.new-books-card {
+    grid-template-columns: 32Px 0px 60px 10px auto;
+    height: 170px;
+    width: 100%;
+    padding: 0 5px;
+}
+
+.categorie-card[data-iscategories="false"] .index,
+.book-card[data-booksearch="true"] .index,
+.bestseller-card .index,
+.new-books-card .index {
+    font-size: 20px;
+}
+
+.categorie-card[data-iscategories="false"] .index, .categorie-card[data-iscategories="false"] .cover, .categorie-card[data-iscategories="false"] .description,
+.book-card[data-booksearch="true"] .index, .book-card[data-booksearch="true"] .cover, .book-card[data-booksearch="true"] .description,
+.bestseller-card .index, .bestseller-card .cover, .bestseller-card .description,
+.new-books-card .index, .new-books-card .cover, .new-books-card .description {
+    height: 150px;
+}
+
+.categorie-card[data-iscategories="false"] .cover img,
+.book-card[data-booksearch="true"] .cover img,
+.bestseller-card .cover img,
+.new-books-card .cover img {
+    width: 60px;
+    height: 90px;
+}
+
+.categorie-card[data-iscategories="false"] .description h1,
+.book-card[data-booksearch="true"] .description h1,
+.bestseller-card .description h1,
+.new-books-card .description h1 {
+    height: 25px;
+    overflow: hidden;
+    width: 93%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.categorie-card[data-iscategories="false"] .description p,
+.book-card[data-booksearch="true"] .description p,
+.bestseller-card .description p,
+.new-books-card .description p {
+    height: 70px;
+}
+
+.categorie-card[data-iscategories="false"] .description .actions,
+.book-card[data-booksearch="true"] .description .actions,
+.bestseller-card .description .actions,
+.new-books-card .description .actions {
+    width: 100px;
+    height: 20px;
+}
+
+.categorie-card[data-iscategories="false"] .description .actions .buy,
+.book-card[data-booksearch="true"] .description .actions .buy,
+.bestseller-card .description .actions .buy,
+.new-books-card .description .actions .buy {
+    font-size: 10px;
+    padding: 0 8px;
+    height: 20px;
+}
+
+.categorie-card[data-iscategories="false"] .description .actions .view,
+.book-card[data-booksearch="true"] .description .actions .view,
+.bestseller-card .description .actions .view,
+.new-books-card .description .actions .view {
+    width: 20px;
+    height: 20px;
+}
+
+.categorie-card[data-iscategories="false"] .description .actions .view svg,
+.book-card[data-booksearch="true"] .description .actions .view svg,
+.bestseller-card .description .actions .view svg,
+.new-books-card .description .actions .view svg {
+    width: 15px;
+    height: 15px;
+}
+
+.footer .follow-us a {
+    width: 22px;
+    height: 22px;
+}
+
+.footer {
+    height: 40px;
+}
+
+.footer .follow-us a:not(:last-child) {
+    margin-right: 10px;
+}
+
+
+.categorie-card {
+    margin-top: 5px;
+    width: 100%;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.categorie-card .categorie-head {
+    font-size: 16px;
+}
+
+.categorie-body {
+    grid-template-columns: repeat(5, 130px);
+    gap: 10px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.categorie-body .book {
+    height: 170px;
+}
+
+.categorie-body .book img {
+    width: 100px;
+    height: 120px;
+}
+
+.categorie-body .book h3 {
+    height: 20px;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.book-card:not([data-booksearch="true"]) {
+    grid-template-areas:
+        '. . . . . . .'
+        '. cover . desc desc desc .'
+        '. . . . . . .'
+        '. description description description . status .'
+        '. . . . . . .'
+        '. auth-bio auth-bio auth-bio auth-bio auth-bio .';
+    grid-template-columns: 10px 90px 10px auto 10px 100px 10px;
+    grid-template-rows: 10px 180px 10px auto 10px auto 10px;
+}
+
+.book-card:not([data-booksearch="true"]) .cover, .book-card:not([data-booksearch="true"]) .desc {
+    height: 180px;
+}
+
+.book-card:not([data-booksearch="true"]) .desc {
+    padding: 0 10px;
+}
+
+.book-card:not([data-booksearch="true"]) .cover img {
+    width: 90px;
+    height: 140px;
+}
+
+.book-card:not([data-booksearch="true"]) .status {
+    min-height: 120px;
+}
+
+.book-card:not([data-booksearch="true"]) .status .status-container {
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.book-card:not([data-booksearch="true"]) .status .status-container .book-buy {
+    height: 28px;
+    font-size: 12px;
+    width: 90%;
+}
+
+
+.book-card .status .status-container .book-price .price-span-2,
+.book-card .status .status-container .book-status .status-span-2 {
+    width: 50px;
+}
+
+.profile,
+.create-profile {
+    width: 100%;
+}
+
+
+.set-new-password {
+    width: 100%;
+    height: 550px;
+    grid-template-rows: auto 40px auto 170px auto 60px auto 60px auto 60px auto 60px auto;
+}
+
+.set-new-password .set-new-password-image img {
+    height: 170px;
+}
+
+.select-account,
+.confirm-owner,
+.confirm-email {
+    width: 100%;
+    height: 450px;
+    grid-template-rows: auto 40px auto 180px auto 60px auto 40px auto;
+}
+
+.select-account .select-account-image img,
+.confirm-owner .email-image img,
+.confirm-email .email-image img {
+    height: 180px;
+}
+
+.set-new-password[data-from-forget="true"] {
+    grid-template-rows: auto 40px auto 170px auto 60px auto 60px auto 40px auto;
+}
+
+ul.show-user {
+    top: 0;
+}
+
+.basket-container {
+    width: 100%;
+}
+
+/* .body-container {
+    min-height: calc(100vh - 158px);
+    position: relative;
+} */
+
+/* svg.container-svg.svg-footer {
+    position: absolute;
+    bottom: 40px;
+} */
+/* 
+.footer-container {
+    position: absolute;
+    bottom: 0px;
+} */
+
+.login-page,
+.signin-page {
+    width: 90%;
+}
+
+.login-page .login-email,
+.login-page .login-password,
+.signin-page .signin-username,
+.signin-page .signin-email,
+.signin-page .signin-password,
+.signin-page .signin-repassword {
+    width: 90%;
+}
+
+/* 27-11 */
+
+.author-card .index,
+.author-card .cover {
+    height: 170px;
+}
+
+.author-card .cover img {
+    width: 60px;
+    height: 100px;
+}
+
+.author-card .description {
+    height: 170px;
+    grid-template-rows: 
+        auto auto auto 62.72px auto 30px auto;
+}
+
+.author-card .description p {
+    height: 62.72px;
+}
+
+.author-card .description .actions {
+    width: 130px;
+    height: 30px;
+}
+
+.author-card .description .actions .buy {
+    padding: 3px 17px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.result {
+    padding: 0 10px;
+    box-sizing: border-box;
+}

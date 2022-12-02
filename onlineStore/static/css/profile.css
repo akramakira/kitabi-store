@@ -1,0 +1,371 @@
+.container-svg.svg-footer path {
+    fill: var(--color2);
+  }
+  
+  .container-svg.svg-footer {
+    margin-top: 1px;
+    background-image: linear-gradient( to top, var(--color2) 10%, var(--color1) 10% );
+  }
+  
+  .profile {
+    width: 600px;
+    height: 735px;
+    background-color: var(--color4);
+    border: 2px solid;
+    border-radius: 36px;
+    display: grid;
+    justify-items: center;
+    grid-template-areas:
+        '.'
+        'title'
+        '.'
+        'username'
+        '.'
+        'email'
+        '.'
+        'fname'
+        '.'
+        'lname'
+        '.'
+        'address'
+        '.'
+        'phone'
+        '.'
+        'actions'
+        '.';
+    grid-template-rows: auto 40px auto 60px auto 60px auto 60px auto 60px auto 60px auto 60px auto 40px auto;
+    margin: 20px auto 0;
+  }
+  
+  .profile-title {
+    grid-area: title;
+    margin: 0;
+    padding: 0;
+  }
+
+  .profile .profile-username {
+    grid-area: username;
+    width: 70%;
+  }
+  
+  .profile .profile-username .profile-username-input {
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .profile .profile-username::after {
+    content: "userName";
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+  
+    position: relative;
+    background-color: var(--color4);
+    box-sizing: border-box;
+    display: flex;
+    top: -70px;
+    left: 10%;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile .profile-email {
+    grid-area: email;
+    width: 70%;
+  }
+  
+  .profile .profile-email .profile-email-input {
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .profile .profile-email::after {
+    content: "email";
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+  
+    position: relative;
+    background-color: var(--color4);
+    box-sizing: border-box;
+    display: flex;
+    top: -70px;
+    left: 10%;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile .profile-fname {
+    grid-area: fname;
+    width: 70%;
+    position: relative;
+  }
+  
+  .profile .profile-fname::after {
+    content: "first name";
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+  
+    position: relative;
+    background-color: var(--color4);
+    box-sizing: border-box;
+    display: flex;
+    top: -70px;
+    left: 10%;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile .profile-fname .profile-fname-input {
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .profile .profile-fname svg {
+    content: var(--pcontent);
+    font-weight: bold;
+    font-size: 36px;
+    width: 30px;
+    height: 30px;
+    color: red;
+    box-sizing: border-box;
+    position: absolute;
+    top: 13px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile .profile-lname {
+    grid-area: lname;
+    width: 70%;
+    position: relative;
+  }
+  
+  .profile .profile-lname::after {
+    content: "last name";
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+  
+    position: relative;
+    background-color: var(--color4);
+    box-sizing: border-box;
+    display: flex;
+    top: -70px;
+    left: 10%;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile .profile-lname .profile-lname-input {
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .profile .profile-lname svg {
+    content: var(--pcontent);
+    font-weight: bold;
+    font-size: 36px;
+    width: 30px;
+    height: 30px;
+    color: red;
+    box-sizing: border-box;
+    position: absolute;
+    top: 13px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile .profile-address {
+    grid-area: address;
+    width: 70%;
+    position: relative;
+  }
+  
+  .profile .profile-address::after {
+    content: "address";
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+  
+    position: relative;
+    background-color: var(--color4);
+    box-sizing: border-box;
+    display: flex;
+    top: -70px;
+    left: 10%;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile .profile-address .profile-address-input {
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .profile .profile-address svg {
+    content: var(--pcontent);
+    font-weight: bold;
+    font-size: 36px;
+    width: 30px;
+    height: 30px;
+    color: red;
+    box-sizing: border-box;
+    position: absolute;
+    top: 13px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile .profile-phone {
+    grid-area: phone;
+    width: 70%;
+    position: relative;
+  }
+  
+  .profile .profile-phone::after {
+    content: "phone";
+    font-weight: bold;
+    width: 100px;
+    height: 30px;
+  
+    position: relative;
+    background-color: var(--color4);
+    box-sizing: border-box;
+    display: flex;
+    top: -70px;
+    left: 10%;
+    border-radius: 30%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profile .profile-phone .profile-phone-input {
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .profile .profile-phone svg {
+    content: var(--pcontent);
+    font-weight: bold;
+    font-size: 36px;
+    width: 30px;
+    height: 30px;
+    color: red;
+    box-sizing: border-box;
+    position: absolute;
+    top: 13px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile .actions {
+    grid-area: actions;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    width: 70%;
+    flex-direction: row-reverse;
+  }
+
+  .profile .actions .start {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    width: 70%;
+    flex-direction: row-reverse;
+  }
+
+  .profile .actions .end a.confirm-email {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 15px;
+    height: 40px;
+    border: none;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px #00000087;
+    text-align: center;
+    width: 115px;
+    background: #adf500;
+  }
+
+  .profile .actions .save {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 15px;
+    height: 40px;
+    border: none;
+    border-radius: 13px;
+    background-color: var(--warningcolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px #00000087;
+  }
+
+  .profile .actions .save:disabled {
+    cursor: unset;
+  }
+
+  .profile .actions .cancel {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 15px;
+    height: 40px;
+    border: none;
+    border-radius: 13px;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px #00000087;
+  }
+  
+  
+  .profile .profile-fname .profile-fname-input:focus-visible,
+  .profile .profile-lname .profile-lname-input:focus-visible,
+  .profile .profile-address .profile-address-input:focus-visible,
+  .profile .profile-phone .profile-phone-input:focus-visible {
+    border: 2px solid var(--blue);
+    outline: var(--blue) 1px solid;
+  }

@@ -1,0 +1,380 @@
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.title h1 {
+  margin: 20px 0;
+}
+
+.search {
+  width: 80vw;
+  height: 50px;
+  display: grid;
+  grid-template-areas: "search . radio";
+  grid-template-columns: 60% auto 30%;
+}
+/* 
+.search div:nth-child(1) {
+  border-radius: 10px;
+} */
+
+.search-input {
+  border-radius: 25px;
+  border: 2px solid black;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 85%;
+  height: 50px;
+}
+
+.search-input:focus-visible {
+  outline: black 1px solid;
+}
+
+.search div {
+  align-self: center;
+  font-weight: bold;
+}
+
+.search-input-container {
+  grid-area: search;
+  display: flex;
+}
+
+.search-btn {
+  width: 15%;
+  height: 50px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: white;
+}
+
+.search-btn:hover {
+  background-color: beige;
+}
+
+.search-btn svg {
+  width: 23px;
+  height: 23px;
+}
+
+.result {
+  width: 80vw;
+}
+
+.no-result {
+  width: 80vw;
+  margin: 50px 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  min-height: 180px;
+}
+
+.no-result img {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.no-result span {
+  display: block;
+}
+
+/* card */
+
+.book-card {
+  display: grid;
+  align-items: center;
+  grid-template-areas: "index . cover . desc";
+  grid-template-columns: auto 50px 180px 50px auto;
+  margin: 0 auto;
+  height: 350px;
+  width: 80vw;
+  margin: 24px auto 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  background-color: var(--warningcolor);
+  border-radius: 20px;
+}
+
+.status-used {
+  background-color: var(--color5);
+}
+
+.status-new {
+  background-color: var(--color4);
+}
+
+.book-card .index {
+  height: 270px;
+  width: 50px;
+  grid-area: index;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.book-card .cover {
+  height: 270px;
+  grid-area: cover;
+  display: flex;
+  align-items: center;
+}
+
+.book-card .cover img {
+  width: 180px;
+  height: 270px;
+  box-shadow: 14px 9px 20px 0px #00000087;
+}
+
+.book-card .description {
+  height: 270px;
+  grid-area: desc;
+  display: grid;
+  grid-template-areas:
+    "."
+    "title"
+    "."
+    "descr"
+    "."
+    "buy"
+    ".";
+  justify-items: start;
+
+  text-justify: inter-word;
+  text-align: justify;
+}
+
+.book-card .description h1 {
+  margin: 0;
+  padding: 0;
+  grid-area: title;
+}
+
+.book-card .description p {
+  margin: 0;
+  padding: 0;
+  grid-area: descr;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 82.72px;
+}
+
+.book-card .description .actions {
+  grid-area: buy;
+  width: 220px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-card .description .actions .buy {
+  border-radius: 7px;
+  border: none;
+  padding: 15px 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: var(--orange);
+  font-size: 16px;
+  box-shadow: 1px 1px 0px #00000087;
+  cursor: pointer;
+}
+
+.book-card .description .actions .view {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: var(--green);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 0px #00000087;
+}
+
+.book-card .description .actions .view svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* end card */
+/* author */
+
+
+.author-card {
+  display: grid;
+  align-items: center;
+  grid-template-areas: "index . cover . desc";
+  grid-template-columns: auto 50px 180px 50px auto;
+  margin: 0 auto;
+  height: 350px;
+  width: 80vw;
+  margin: 24px auto 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+  background-color: var(--color4);
+  border-radius: 20px;
+}
+
+.author-card .index {
+  height: 270px;
+  width: 50px;
+  grid-area: index;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.author-card .cover {
+  height: 270px;
+  grid-area: cover;
+  display: flex;
+  align-items: center;
+}
+
+.author-card .cover img {
+  width: 180px;
+  height: 270px;
+  box-shadow: 14px 9px 20px 0px #00000087;
+}
+
+.author-card .description {
+  height: 270px;
+  grid-area: desc;
+  display: grid;
+  grid-template-areas:
+    "."
+    "title"
+    "."
+    "descr"
+    "."
+    "buy"
+    ".";
+  justify-items: start;
+
+  text-justify: inter-word;
+  text-align: justify;
+}
+
+.author-card .description h1 {
+  margin: 0;
+  padding: 0;
+  grid-area: title;
+}
+
+.author-card .description p {
+  margin: 0;
+  padding: 0;
+  grid-area: descr;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 82.72px;
+}
+
+.author-card .description .actions {
+  grid-area: buy;
+  width: 220px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.author-card .description .actions .buy {
+  border-radius: 7px;
+  border: none;
+  padding: 15px 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: orange;
+  font-size: 16px;
+  box-shadow: 1px 1px 0px #00000087;
+  cursor: pointer;
+}
+
+.author-card .description .actions .view {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: #3aa8ec;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 0px #00000087;
+}
+
+.author-card .description .actions .view svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* end author */
+.categories-container {
+  margin-top: 40px;
+}
+
+.container-svg.svg-footer {
+  background-image: linear-gradient(
+    to top,
+    var(--color2) 10%,
+    var(--color1) 10%
+  );
+}
+
+.container-svg.svg-footer path {
+  fill: var(--color2);
+}
+
+
+
+.search-radio-container {
+  grid-area: radio;
+  display: flex;
+}
+
+.search-radio {
+  height: 50px;
+  width: calc(100% / 3);
+  height: 50px;
+  box-sizing: border-box;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-radio input[type='radio'] {
+  display: none;
+}
+
+.search-label {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color4);
+}
+
+.search-label:hover {
+  background-color: var(--color3);
+}
+
+.search-radio-container .search-radio:first-child .search-label {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.search-radio-container .search-radio:last-child .search-label {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.search-label[data-ischecked='true'] {
+  background-color: var(--color1);
+}

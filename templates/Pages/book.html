@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block otherCss %} 
+<link rel="stylesheet" href="{% static 'css/book.css' %}">
+{% endblock %}
+
+{% block header %} 
+{% include 'parts/_navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="body-container">
+    <div class="body-header">
+      {% include 'parts/_messages.html' %}
+    </div>
+    <div class="title">
+      <h1 id="search">{{ book.title }}</h1>
+    </div>
+    <form action="{% url 'add_to_cart' book.id %}" method="post">
+      <div class="book-card">
+        <div class="cover">
+          <img src="{{ book.cover.url }}" alt="{{ book.title }}" />
+        </div>
+        <div class="desc">
+          <p class="author"><span>{% trans "author:" %}</span> {{ book.author }}</p>
+          <p class="categorie"><span>{% trans "categorie:" %}</span>
+              {% for cate in book.categorie.all %}
+              
+              {% if forloop.counter < 4 %}
+                  {% if forloop.first %}
+                      - {{cate}}
+                  {% else %}
+                      <br />- {{cate}}
+                  {% endif %}
+                      
+                  {% if forloop.last %}
+                      .
+                  {% else %}
+                      
+                  {% endif %}
+              {% elif forloop.counter == 4 %}
+              ...
+              {% endif %}
+              
+              {% endfor %}
+          </p>
+          <p class="Publisher">
+            <span>{% trans "Publisher:" %}</span> {{ book.publisher }}
+          </p>
+          <p class="edition"><span>{% trans "edition:" %}</span> {{ book.edition }}</p>
+          <p class="binding"><span>{% trans "Binding:" %}</span> {{ book.binding }}</p>
+          <p class="binding"><span>{% trans "Number of pages:" %}</span> {{ book.nbr_page }}</p>
+          <!-- <p class="descr">
+            An ancient prophecy seems to be coming true when a mysterious
+            presence begins stalking the corridors of a school of magic and
+            leaving its victims paralyzed
+          </p> -->
+        </div>
+          <div class="status">
+              {% csrf_token %}
+              <div class="status-container">
+                <div class="book-price">
+                  <span class="price-span">{% trans "Price:" %}</span>
+                  <span class="price-span-2">{{ book.price }}DA</span>
+                </div>
+                <div class="book-status">
+                  <span class="status-span">{% trans "Status:" %}</span>
+                  <span class="status-span-2">
+                  {% if book.status == "used" %}
+                  {% trans "Used" %}
+                  {% elif book.status == "new" %}
+                  {% trans "New" %}
+                  {% else %}
+                  {% trans "Unknown" %}
+                  {% endif %}
+                  </span>
+                </div>
+                <button type="submit" class="book-buy" name="buybtn">{% trans "Add to cart" %}</button>
+              </div>
+          </div>
+        <div class="description">
+          <h1 class="desc-title">{% trans "Description" %}</h1>
+          <p class="desc-p">
+            {{ book.description }}
+          </p>
+        </div>
+        <div class="auth-bio">
+          {% if book.author.bio %}
+          <h1 class="auth-bio-title">{% trans "Author bio" %}</h1>
+          <p class="auth-bio-p">
+            {{ book.author.bio }}
+          </p>          
+          {% endif %}
+        </div>
+      </div>
+    </form>
+    <svg
+      class="container-svg svg-footer"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 1440 126"
+      xml:space="preserve"
+    >
+      <path
+        class="main-path"
+        d="M685.6,38.8C418.7-11.1,170.2,9.9,0,30v96h1440V30C1252.7,52.2,1010,99.4,685.6,38.8z"
+      ></path>
+    </svg>
+    {% include 'parts/_footer.html' %}
+  </div>
+{% endblock %}
+

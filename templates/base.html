@@ -1,0 +1,46 @@
+{% load static %}
+{% load i18n %}
+{% get_current_language as lang %}
+<!DOCTYPE html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Open+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    {% block otherFonts %} {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    {% block otherCss %} {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/main-xl.css' %}" media="screen and (max-width: 1400px)"/>
+    <link rel="stylesheet" href="{% static 'css/main-l.css' %}" media="screen and (max-width: 1200px)"/>
+    <link rel="stylesheet" href="{% static 'css/main-m.css' %}" media="screen and (max-width: 1025px)"/>
+    <link rel="stylesheet" href="{% static 'css/main-s.css' %}" media="screen and (max-width: 864px)"/>
+    <link rel="stylesheet" href="{% static 'css/main-xs.css' %}" media="screen and (max-width: 620px)"/>
+    <link rel="stylesheet" href="{% static 'css/main-xxs.css' %}" media="screen and (max-width: 480px)"/>
+    
+    {% if lang == "ar" %}
+    <link rel="stylesheet" href="{% static 'css/rtl.css' %}" id="language" />
+    {% else %}
+    <link rel="stylesheet" href="{% static 'css/ltr.css' %}" id="language" />
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'css/normalization.css' %}" />
+    
+    <title>{% trans "Kitabi Store" %}</title>
+  </head>
+  <body>
+    {% block header %} {% endblock %}
+    {% block content %} {% endblock %}
+    {% include "parts/_login_form.html" %}
+    {% include "parts/_signin_form.html" %}
+    {% include "parts/_navbar_form.html" %}
+    {% block footer %} {% endblock %}
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    {% block otherJs %} {% endblock %}
+  </body>
+</html>

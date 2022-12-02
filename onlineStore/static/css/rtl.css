@@ -1,0 +1,450 @@
+body {
+  direction: rtl;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.login-nav .actions-nav .language {
+  margin-left: var(--marginlanguage);
+  margin-right: unset;
+  right: var(--positionlanguage);
+  left: unset;
+}
+
+.login-nav .actions-nav .log-sign,
+.footer .follow-us {
+  flex-direction: row-reverse;
+}
+
+.container-svg,
+.best-sellers-container-full,
+.body-header,
+.new-books-container-full,
+.categories-container-full,
+.footer-container {
+  margin-left: unset;
+  margin-right: -10vw;
+}
+
+
+.navbar .nav-logo:hover {
+  transform-origin: right;
+}
+
+.login-page .login-email::after,
+.login-page .login-password::after,
+.signin-page .signin-username::after,
+.signin-page .signin-email::after,
+.signin-page .signin-password::after,
+.signin-page .signin-repassword::after {
+  left: unset;
+  right: 10%;
+}
+
+.login-page .login-email svg,
+.login-page .login-password svg,
+.signin-page .signin-username svg,
+.signin-page .signin-email svg,
+.signin-page .signin-password svg,
+.signin-page .signin-repassword svg {
+  left: unset;
+  right: calc(50% - 15px + 500px * 0.3);
+}
+
+.login-page .login-password .login-password-input,
+.login-page .login-email .login-email-input,
+.signin-page .signin-username .signin-username-input,
+.signin-page .signin-email .signin-email-input,
+.signin-page .signin-password .signin-password-input,
+.signin-page .signin-repassword .signin-repassword-input,
+.set-new-password .new-password .new-password-input,
+.set-new-password .old-password .old-password-input,
+.set-new-password .new-repassword .new-repassword-input {
+  padding-right: 10px;
+  padding-left: 40px;
+}
+
+.login-page .forget,
+.signin-page .agree {
+  padding-left: unset;
+  padding-right: 15%;
+}
+
+.login-page .ou::before,
+.signin-page .sign-ou::before {
+  right: calc(50% - 25px);
+  left: unset;
+}
+
+.bi-caret-right-fill path {
+  d: path(
+    "m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"
+  );
+}
+
+.search-input {
+  padding-right: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+.categorie-card .categorie-head h2 span {
+  padding-right: 5px;
+  padding-left: unset;
+}
+
+@keyframes hidden {
+  from {
+    right: 0vw;
+  }
+  to {
+    right: -80vw;
+  }
+}
+
+@keyframes visible {
+  from {
+    right: 80vw;
+  }
+  to {
+    right: 0vw;
+  }
+}
+
+.daily-offer-card {
+  right: 80vw;
+}
+
+
+.daily-offer-card.initial {
+  right: 0;
+}
+
+.daily-offer-card.visible {
+  animation: visible 3s;
+  right: 0;
+}
+
+.daily-offer-card.not-active {
+  right: 80vw;
+  transition: right 2s;
+  /* transition: all 5s; */
+}
+
+.search-btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.search-radio-container .search-radio:first-child .search-label {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.search-radio-container .search-radio:last-child .search-label {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+
+.profile .profile-username::after {
+  content: "اسم المستخدم";
+  right: 10%;
+}
+
+.profile .profile-email::after {
+  content: "البريد الالكتروني";
+  right: 10%;
+}
+
+.profile .profile-fname::after {
+  content: "الاسم";
+  right: 10%;
+}
+
+.profile .profile-lname::after {
+  content: "اللقب";
+  right: 10%;
+}
+
+.profile .profile-address::after {
+  content: "العنوان";
+  right: 10%;
+}
+
+.profile .profile-phone::after {
+  content: "الهاتف";
+  right: 10%;
+}
+
+
+.profile .profile-fname svg {
+  right: calc(50% - 15px + 600px * 0.3);
+}
+
+.profile .profile-lname svg {
+  right: calc(50% - 15px + 600px * 0.3);
+}
+
+.profile .profile-address svg {
+  right: calc(50% - 15px + 600px * 0.3);
+}
+
+.profile .profile-phone svg {
+  right: calc(50% - 15px + 600px * 0.3);
+}
+
+.profile .profile-username .profile-username-input,
+.profile .profile-email .profile-email-input,
+.profile .profile-fname .profile-fname-input,
+.profile .profile-lname .profile-lname-input,
+.profile .profile-address .profile-address-input,
+.profile .profile-phone .profile-phone-input {
+  padding-right: 10px;
+}
+
+.basket-container .basket-header .basket-label {
+  width: 90px;
+}
+
+.basket-container .delivery-to span:last-child {
+  padding-left: 20px;
+}
+
+.basket-container .basket-total span:first-child,
+.basket-container .delivery-price span:first-child,
+.basket-container .total-amount span:first-child,
+.basket-container .delivery-amount span:first-child {
+    padding-right: 20px;
+}
+
+.login-page .login-email {
+  --xxcontent: "اسم المستخدم";
+}
+
+.login-page .login-password {
+  --yycontent: "كلمة السر";
+}
+
+.signin-page .signin-username {
+  --uucontent: "اسم المستخدم";
+}
+
+.signin-page .signin-email {
+  --eecontent: "البريد الالكتروني";
+}
+
+.signin-page .signin-password {
+  --ppcontent: "كلمة السر";
+}
+
+.signin-page .signin-repassword {
+  --rrcontent: "تأكيد كلمة السر";
+}
+
+.create-profile .profile-fname::after {
+  content: "الاسم الاول";
+  right: 10%;
+}
+
+.create-profile .profile-lname::after {
+  content: "الاسم الاخير";
+  right: 10%;
+}
+
+.create-profile .profile-address::after {
+  content: "العنوان";
+  right: 10%;
+}
+
+.create-profile .profile-phone::after {
+  content: "الهاتف";
+  right: 10%;
+}
+
+.create-profile .profile-fname svg,
+.create-profile .profile-lname svg,
+.create-profile .profile-address svg,
+.create-profile .profile-phone svg,
+.set-new-password .old-password svg,
+.set-new-password .new-password svg,
+.set-new-password .new-repassword svg,
+.select-account .select-account-code svg,
+.confirm-owner .email-code svg,
+.set-new-password .new-password svg,
+.set-new-password .new-repassword svg{
+  /* right: calc(50% - 15px + 600px * 0.3); */
+  left: 0;
+}
+
+.create-profile .profile-fname .profile-fname-input,
+.create-profile .profile-lname .profile-lname-input,
+.create-profile .profile-address .profile-address-input,
+.create-profile .profile-phone .profile-phone-input {
+  padding-right: 10px;
+}
+
+.confirm-email .email-code {
+  --activation-content: "كود التفعيل"
+}
+
+.confirm-email .email-code .email-code-input {
+  padding-right: 10px;
+}
+
+.confirm-email .email-code::after {
+  right: 10%;
+  width: 100px;
+}
+
+.confirm-owner .email-code {
+  --activation-content: "كود اعادة التعيين"
+}
+
+.confirm-owner .email-code .email-code-input {
+  padding-right: 10px;
+}
+
+.confirm-owner .email-code::after {
+  right: 10%;
+  width: 160px;
+}
+
+.set-new-password .old-password {
+  --activation-content: "كلمة السر السابقة"
+}
+
+.set-new-password .old-password .old-password-input {
+  padding-right: 10px;
+}
+
+.set-new-password .old-password::after {
+  right: 10%;
+  width: 160px;
+}
+
+.set-new-password .new-password {
+  --activation-content: "كلمة السر"
+}
+
+.set-new-password .new-password .new-password-input {
+  padding-right: 10px;
+}
+
+.set-new-password .new-password::after {
+  right: 10%;
+  width: 160px;
+}
+
+.set-new-password .new-repassword {
+  --activation-content: "اعادة كلمة السر"
+}
+
+.set-new-password .new-repassword .new-repassword-input {
+  padding-right: 10px;
+}
+
+.set-new-password .new-repassword::after {
+  right: 10%;
+  width: 160px;
+}
+
+.select-account .select-account-code {
+  --activation-content: "البريد الالكتروني"
+}
+
+.select-account .select-account-code .select-account-input {
+  padding-right: 10px;
+}
+
+.select-account .select-account-code::after {
+  right: 10%;
+  width: 160px;
+}
+
+
+/* extra large */
+@media screen and (max-width: 1400px) {
+  
+}
+
+
+/* large */
+@media screen and (max-width: 1200px) {
+  .categorie-card {
+    padding: 0 10px 0 0;
+  }
+}
+
+
+/* medium */
+@media screen and (max-width: 1025px) {
+  
+}
+
+
+/* small */
+@media screen and (max-width: 864px) {
+  
+}
+
+
+/* extra small */
+@media screen and (max-width: 620px) {
+  
+  .container-svg,
+  .best-sellers-container-full,
+  .body-header,
+  .new-books-container-full,
+  .categories-container-full,
+  .footer-container {
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  .body-container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .side-navbar {
+    left: 0;
+  }
+
+  .side-navbar .sidenav-logo {
+    border-right: solid 5px #0cb70c;
+    padding-right: 10px;
+  }
+
+  .login-page .login-email svg,
+  .login-page .login-password svg,
+  .signin-page .signin-username svg,
+  .signin-page .signin-email svg,
+  .signin-page .signin-password svg,
+  .signin-page .signin-repassword svg {
+    left: unset;
+    right: calc(100% - 40px);
+    top: calc(50% - 15px);
+  }
+}
+
+
+/* extra extra small */
+@media screen and (max-width: 480px) {
+  .login-nav .actions-nav .log-sign {
+    left: 0;
+    right: unset;
+  }
+  
+  ul.show-user {
+    right: 110px;
+  }
+
+  .login-page .forget, .signin-page .agree {
+    padding-left: unset;
+    padding-right: 5%;
+  }
+}

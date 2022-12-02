@@ -1,0 +1,87 @@
+{% load static %}
+{% load i18n %}
+<form action="{% url 'signin' %}" method="POST">
+  {% csrf_token %}
+  <div class="signin-page-container disabled">
+    <div class="signin-page">
+      <h1 class="signin-title">{% trans "sign in" %}</h1>
+      <div class="signin-username">
+        <input
+          type="text"
+          id="signin-username-input"
+          name="signin-username"
+          class="signin-username-input"
+          minlength="8"
+          maxlength="26"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div class="signin-email">
+        <input
+          type="text"
+          id="signin-email-input"
+          name="signin-email"
+          class="signin-email-input"
+          minlength="8"
+          maxlength="36"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      <div class="signin-password">
+        <input
+          type="password"
+          id="signin-password-input"
+          name="signin-password"
+          class="signin-password-input"
+          minlength="8"
+          maxlength="26"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+          />
+        </svg>
+      </div>
+      
+      <input type="submit" value="{% trans "sign in" %}" name="btnsignin" class="signin-btn" id="signinBtn" />
+      <p class="agree">
+        {% trans "By creating an account, you agree to our" %}
+        <a href="#"> {% trans "Conditions of Use" %} </a> {% trans "and" %}
+        <a href="#"> {% trans "Privacy Notice" %}</a>.
+      </p>
+      <div class="sign-ou">
+        <hr />
+      </div>
+      <button class="ou-log-in" type="button">{% trans "log in" %}</button>
+    </div>
+  </div>
+</form>

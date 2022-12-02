@@ -1,0 +1,25 @@
+.best-sellers-container .best-sellers,
+.new-books-container .new-books,
+.categories-container .categories {
+    grid-template-columns: repeat(4, 220px);
+    gap: calc((80vw - (4 * 220px)) / 3);
+}
+
+.best-sellers-container .best-sellers .best-seller:nth-child(5),
+.new-books-container .new-books .new-book:nth-child(5),
+.categories-container .categories .categorie:nth-child(5) {
+    display: none;
+}
+
+.best-sellers-container .best-sellers img,
+.new-books-container .new-books img,
+.categories-container .categories img {
+    width: 180px;
+    height: 230px;
+}
+
+.categorie-body {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 80vw;
+}

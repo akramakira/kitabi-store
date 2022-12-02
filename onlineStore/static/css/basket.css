@@ -1,0 +1,209 @@
+.basket-container {
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--color4, #fffbe9);
+    border: 2px solid;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin: 20px auto 0;
+}
+
+.basket-container .basket-header {
+    display: grid;
+    grid-template-areas:
+        'title title'
+        'id phone'
+        'date user';
+    column-gap: 20%;
+}
+
+.basket-container .basket-header .basket-title {
+    grid-area: title;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.basket-container .basket-header .basket-id,
+.basket-container .basket-header .basket-phone,
+.basket-container .basket-header .basket-date,
+.basket-container .basket-header .basket-user {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.basket-container .basket-header .basket-id {
+    grid-area: id;
+    margin: 0;
+    padding-left: 0;
+}
+
+.basket-container .basket-header .basket-phone {
+    grid-area: phone;
+    margin: 0;
+    display: flex;
+
+}
+
+.basket-container .basket-header .basket-date {
+    grid-area: date;
+    margin: 0;
+    padding-left: 0;
+}
+
+.basket-container .basket-header .basket-user {
+    grid-area: user;
+    margin: 0;
+    border: 2px gray dashed;
+    border-radius: 3vw;
+    display: flex;
+}
+
+.basket-container .sub-title {
+    margin: 0;
+}
+
+.basket-container .basket-books {
+    line-height: 1.5;
+}
+
+.basket-container .basket-books table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.basket-container .basket-books table tr:nth-child(even):not(:first-child) {
+    background-color: var(--color3);
+}
+
+.basket-container .basket-books table tr:nth-child(odd):not(:first-child) {
+    background-color: var(--color2);
+}
+
+.basket-table-header {
+    background-color: var(--color1);
+}
+
+.basket-container .basket-books table tr th,
+.basket-container .basket-books table tr td {
+    text-align: start;
+    padding: 5px;
+}
+
+.basket-container .basket-books table tr td:nth-child(2),
+.basket-container .basket-books table tr th:nth-child(2) {
+    width: 40%;
+}
+
+.basket-container .basket-books table tr td:nth-child(3),
+.basket-container .basket-books table tr th:nth-child(3) {
+    width: 40%;
+}
+
+.basket-container .basket-books table tr td:nth-child(4),
+.basket-container .basket-books table tr th:nth-child(4) {
+    width: 15%;
+}
+
+.basket-container .basket-books table tr td:first-child,
+.basket-container .basket-books table tr th:first-child {
+    width: 5%;
+}
+
+.basket-container .delivery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.basket-container .basket-total,
+.basket-container .delivery-price,
+.basket-container .total-amount,
+.basket-container .delivery-amount {
+    display: flex;
+    align-self: flex-end;
+    width: 50%;
+    background: var(--color3);
+    line-height: 1.5;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.basket-container .basket-total span:first-child,
+.basket-container .delivery-price span:first-child,
+.basket-container .total-amount span:first-child,
+.basket-container .delivery-amount span:first-child {
+    width: 50%;
+}
+
+.basket-container .basket-total span:last-child,
+.basket-container .delivery-price span:last-child,
+.basket-container .total-amount span:last-child,
+.basket-container .delivery-amount span:last-child {
+    width: 30%;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.basket-container .delivery-to {
+    display: flex;
+    align-self: flex-end;
+    width: 45%;
+    background: var(--color3);
+    line-height: 1.5;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.basket-container .delivery-to span:first-child {
+    padding: 0 20px;
+    width: 100px;
+}
+
+.basket-container .confirm-btn {
+    width: 110px;
+    height: 30px;
+    border: none;
+    background: orange;
+    border-radius: 15px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+
+.container-svg.svg-footer {
+    background-image: linear-gradient(
+        to top,
+        var(--color2) 10%,
+        var(--color1) 10%
+    );
+}
+
+.container-svg.svg-footer path {
+    fill: var(--color2);
+}
+
+.no-result {
+    width: 80vw;
+    margin: 50px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.no-result img {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.footer-container {
+    margin-bottom: -6px;
+}

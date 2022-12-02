@@ -1,0 +1,56 @@
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.categorie-body {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  gap: calc((80vw - (5 * 200px)) / 4);
+  width: 80vw;
+}
+
+.categorie-body .book {
+  height: 300px;
+  background-color: var(--color4);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.categorie-body .book img {
+  width: 150px;
+  height: 200px;
+  border-radius: 7px;
+}
+
+.categorie-body .book h3 {
+  height: 50px;
+  margin: 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.categorie-card {
+  margin-top: 50px;
+}
+
+.categorie-card .categorie-head {
+  cursor: pointer;
+}
+
+.container-svg.svg-footer {
+  background-image: linear-gradient(
+    to top,
+    var(--color2) 10%,
+    var(--color1) 10%
+  );
+}
+
+.container-svg.svg-footer path {
+  fill: var(--color2);
+}
