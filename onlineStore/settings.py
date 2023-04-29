@@ -30,7 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'https://kitabi-store.herokuapp.com/',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    'web-production-699cd.up.railway.app',
 ]
 
 
