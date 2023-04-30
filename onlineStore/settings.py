@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'onlineStore.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kitabi',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'akira',
-        'HOST': 'localhost',
-        'PORT': '5433'
+        'PASSWORD': 'fwIDxrJE2c02KLVcE6pV',
+        'HOST': 'containers-us-west-106.railway.app',
+        'PORT': '5442'
     }
 }
 
